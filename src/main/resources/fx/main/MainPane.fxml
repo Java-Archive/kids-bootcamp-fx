@@ -1,0 +1,62 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import fx.main.MainPane?>
+<fx:root type="fx.main.MainPane"
+         fx:controller="fx.main.MainPaneController"
+         xmlns:fx="http://javafx.com/fxml"
+         fx:id="mainPane">
+    <VBox>
+        <HBox fx:id="topLine">
+            <TextField fx:id="textFieldA" text="MAX" editable="false"/>
+            <TextField fx:id="textFieldB" text="" editable="false"/>
+        </HBox>
+        <HBox fx:id="keyboardLine1">
+            <Button fx:id="btnA" text="A" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
+            <Button fx:id="btnB" text="B" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
+            <Button fx:id="btnC" text="C" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
+            <Button fx:id="btnD" text="D" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
+            <Button fx:id="btnE" text="E" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
+            <Button fx:id="btnF" text="F" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
+            <Button fx:id="btnG" text="G" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
+            <Button fx:id="btnH" text="H" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
+            <Button fx:id="btnI" text="I" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
+        </HBox>
+        <HBox fx:id="keyboardLine2">
+            <Button fx:id="btnJ" text="J" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
+            <Button fx:id="btnK" text="K" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
+            <Button fx:id="btnL" text="L" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
+            <Button fx:id="btnM" text="M" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
+            <Button fx:id="btnN" text="N" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
+            <Button fx:id="btnO" text="O" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
+            <Button fx:id="btnP" text="P" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
+            <Button fx:id="btnQ" text="Q" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
+            <Button fx:id="btnR" text="R" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
+        </HBox>
+        <HBox fx:id="keyboardLine3">
+            <Button fx:id="btnS" text="S" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
+            <Button fx:id="btnT" text="T" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
+            <Button fx:id="btnU" text="U" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
+            <Button fx:id="btnV" text="V" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
+            <Button fx:id="btnW" text="W" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
+            <Button fx:id="btnX" text="X" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
+            <Button fx:id="btnY" text="Y" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
+            <Button fx:id="btnZ" text="Z" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
+        </HBox>
+        <HBox fx:id="keyboardLine4">
+            <!--<Button fx:id="btnVor" text="-&gt;"      style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>-->
+            <Button fx:id="btnZuerueck" text="&lt;-" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
+            <Button fx:id="btnLeer" text="&lt;&gt;"   style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
+        </HBox>
+        <HBox fx:id="keyboardLine5">
+            <Button fx:id="btnOK" text="OK"   style="-fx-pref-height: 45px; -fx-pref-width: 45px"/>
+        </HBox>
+        <HBox fx:id="resultLine1">
+            <Label fx:id="labelOK" text="" />
+        </HBox>
+        <HBox fx:id="resultLine2">
+            <Label fx:id="labelBad" text="" />
+        </HBox>
+
+    </VBox>
+</fx:root>
+
