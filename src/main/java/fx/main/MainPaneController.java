@@ -49,10 +49,13 @@ public class MainPaneController implements Initializable {
   public Label labelOKWrite;
   public Label labelBadWrite;
 
-  public Button btnCalc;
+  public Button btnCalcPlus;
+  public Button btnCalcMinus;
 
-  public TextField textFieldMatheA;
-  public TextField textFieldMatheB;
+  public TextField textFieldMatheAPlus;
+  public TextField textFieldMatheBPlus;
+  public TextField textFieldMatheAMinus;
+  public TextField textFieldMatheBMinus;
 
   private List<String> words = new ArrayList<String>();
 
@@ -147,9 +150,9 @@ public class MainPaneController implements Initializable {
 
 
     //rechenaufgaben
-    btnCalc.setOnAction(event -> {
-      String result = textFieldMatheB.getText().trim();
-      boolean smily = Integer.valueOf(result).equals(expectedResult);
+    btnCalcPlus.setOnAction(event -> {
+      String result = textFieldMatheBPlus.getText().trim();
+      boolean smily = Integer.valueOf(result).equals(expectedResultPlus);
       if (smily) {
         counterSmilyCalc = counterSmilyCalc + 1;
 //        labelOKCalc.setText( ":-} " + counterSmilyCalc);
@@ -157,26 +160,53 @@ public class MainPaneController implements Initializable {
       } else {
         counterNotSmilyCalc = counterNotSmilyCalc + 1;
 //        labelBadCalc.setText(":-{ " + counterNotSmilyCalc);
-        labelBadCalc.setText(labelOKCalc.getText() + ":-{ ");
+        labelBadCalc.setText(labelBadCalc.getText() + ":-{ ");
       }
-      initNextRechenaufgabe();
+      initNextRechenaufgabePlus();
 
     });
-    initNextRechenaufgabe();
+
+    btnCalcMinus.setOnAction(event -> {
+      String result = textFieldMatheBMinus.getText().trim();
+      boolean smily = Integer.valueOf(result).equals(expectedResultMinus);
+      if (smily) {
+        counterSmilyCalc = counterSmilyCalc + 1;
+//        labelOKCalc.setText( ":-} " + counterSmilyCalc);
+        labelOKCalc.setText( labelOKCalc.getText() + ":-} ");
+      } else {
+        counterNotSmilyCalc = counterNotSmilyCalc + 1;
+//        labelBadCalc.setText(":-{ " + counterNotSmilyCalc);
+        labelBadCalc.setText(labelBadCalc.getText() + ":-{ ");
+      }
+      initNextRechenaufgabeMinus();
+
+    });
+    initNextRechenaufgabePlus();
+    initNextRechenaufgabeMinus();
 
 
   }
 
   private Random random = new Random();
 
-  private void initNextRechenaufgabe() {
+  private void initNextRechenaufgabePlus() {
     int[] ints = random.ints(0, 5).limit(2).toArray();
-    expectedResult = ints[0] + ints[1];
-    textFieldMatheA.setText(ints[0] + " + " + ints[1]);
-    textFieldMatheB.setText("");
+    expectedResultPlus = ints[0] + ints[1];
+    textFieldMatheAPlus.setText(ints[0] + " + " + ints[1]);
+    textFieldMatheBPlus.setText("");
   }
 
-  private int expectedResult = 0;
+  private void initNextRechenaufgabeMinus() {
+    int[] ints = new int[2];
+    ints[0] = random.ints(1, 10).limit(1).toArray()[0];
+    ints[1] = random.ints(0, ints[0]).limit(1).toArray()[0];
+    expectedResultMinus = ints[0] - ints[1];
+    textFieldMatheAMinus.setText(ints[0] + " - " + ints[1]);
+    textFieldMatheBMinus.setText("");
+  }
+
+  private int expectedResultPlus = 0;
+  private int expectedResultMinus = 0;
 
   private void addButtonEventHandler(Button btn, TextField tf) {
     btn.setOnAction(new ButtonEventHandler(btn, tf));

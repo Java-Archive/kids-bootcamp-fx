@@ -122,12 +122,20 @@
             <Label fx:id="labelBadCalc" text="" style="-fx-font-size: 25px"/>
         </HBox>
         <HBox>
-            <TextField fx:id="textFieldMatheA" text="" editable="false"
+            <TextField fx:id="textFieldMatheAPlus" text="" editable="false"
                        style="-fx-pref-height: 70px; -fx-pref-width: 250px; -fx-font-size: 25px"/>
-            <Button fx:id="btnCalc" text="=" style="-fx-pref-height: 70px; -fx-pref-width: 70px;-fx-font-size: 25px"/>
-            <TextField fx:id="textFieldMatheB" text="" editable="true"
+            <Button fx:id="btnCalcPlus" text="=" style="-fx-pref-height: 70px; -fx-pref-width: 70px;-fx-font-size: 25px"/>
+            <TextField fx:id="textFieldMatheBPlus" text="" editable="true"
                        style="-fx-pref-height: 70px; -fx-pref-width: 250px; -fx-font-size: 25px"/>
         </HBox>
+        <HBox>
+            <TextField fx:id="textFieldMatheAMinus" text="" editable="false"
+                       style="-fx-pref-height: 70px; -fx-pref-width: 250px; -fx-font-size: 25px"/>
+            <Button fx:id="btnCalcMinus" text="=" style="-fx-pref-height: 70px; -fx-pref-width: 70px;-fx-font-size: 25px"/>
+            <TextField fx:id="textFieldMatheBMinus" text="" editable="true"
+                       style="-fx-pref-height: 70px; -fx-pref-width: 250px; -fx-font-size: 25px"/>
+        </HBox>
+
         <!--</Tab>-->
         <!--</TabPane>-->
 
