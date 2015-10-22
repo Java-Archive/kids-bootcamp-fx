@@ -1,61 +1,136 @@
+<?import fx.main.MainPane?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import fx.main.MainPane?>
 <fx:root type="fx.main.MainPane"
          fx:controller="fx.main.MainPaneController"
          xmlns:fx="http://javafx.com/fxml"
          fx:id="mainPane">
-    <VBox>
+    <VBox style="-fx-font-scale: 300%">
+
+        <!--<TabPane fx:id="mainTab">-->
+        <!--<Tab fx:id="tabGrossbuchstaben">-->
         <HBox fx:id="topLine">
-            <TextField fx:id="textFieldA" text="MAX" editable="false"/>
-            <TextField fx:id="textFieldB" text="" editable="false"/>
+            <TextField fx:id="textFieldA"  editable="false"
+                       style="-fx-pref-height: 70px; -fx-pref-width: 250px; -fx-font-size: 25px"/>
+            <TextField fx:id="textFieldB" text="" editable="false"
+                       style="-fx-pref-height: 70px; -fx-pref-width: 250px; -fx-font-size: 25px"/>
         </HBox>
-        <HBox fx:id="keyboardLine1">
-            <Button fx:id="btnA" text="A" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
-            <Button fx:id="btnB" text="B" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
-            <Button fx:id="btnC" text="C" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
-            <Button fx:id="btnD" text="D" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
-            <Button fx:id="btnE" text="E" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
-            <Button fx:id="btnF" text="F" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
-            <Button fx:id="btnG" text="G" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
-            <Button fx:id="btnH" text="H" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
-            <Button fx:id="btnI" text="I" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
+
+        <HBox>
+            <children>
+                <HBox fx:id="keyboardLine1">
+                    <Button fx:id="btnA" text="A" style="-fx-pref-height: 70px; -fx-pref-width: 70px ; -fx-font-size: 25px"/>
+                    <Button fx:id="btnB" text="B" style="-fx-pref-height: 70px; -fx-pref-width: 70px ; -fx-font-size: 25px"/>
+                    <Button fx:id="btnC" text="C" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnD" text="D" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnE" text="E" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnF" text="F" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnG" text="G" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnH" text="H" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnI" text="I" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+
+                </HBox>
+                <HBox fx:id="keyboardLine2">
+                    <Button fx:id="btnJ" text="J" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnK" text="K" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnL" text="L" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnM" text="M" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnN" text="N" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnO" text="O" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnP" text="P" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnQ" text="Q" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnR" text="R" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                </HBox>
+
+            </children>
         </HBox>
-        <HBox fx:id="keyboardLine2">
-            <Button fx:id="btnJ" text="J" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
-            <Button fx:id="btnK" text="K" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
-            <Button fx:id="btnL" text="L" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
-            <Button fx:id="btnM" text="M" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
-            <Button fx:id="btnN" text="N" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
-            <Button fx:id="btnO" text="O" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
-            <Button fx:id="btnP" text="P" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
-            <Button fx:id="btnQ" text="Q" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
-            <Button fx:id="btnR" text="R" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
+        <HBox>
+            <children>
+                <HBox fx:id="keyboardLine1k">
+                    <Button fx:id="btnAk" text="a" style="-fx-pref-height: 70px; -fx-pref-width: 70px ; -fx-font-size: 25px"/>
+                    <Button fx:id="btnBk" text="b" style="-fx-pref-height: 70px; -fx-pref-width: 70px ; -fx-font-size: 25px"/>
+                    <Button fx:id="btnCk" text="c" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnDk" text="d" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnEk" text="e" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnFk" text="f" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnGk" text="g" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnHk" text="h" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnIk" text="i" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                </HBox>
+                <HBox fx:id="keyboardLine2k">
+                    <Button fx:id="btnJk" text="j" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnKk" text="k" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnLk" text="l" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnMk" text="m" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnNk" text="n" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnOk" text="o" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnPk" text="p" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnQk" text="q" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnRk" text="r" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                </HBox>
+
+            </children>
         </HBox>
-        <HBox fx:id="keyboardLine3">
-            <Button fx:id="btnS" text="S" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
-            <Button fx:id="btnT" text="T" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
-            <Button fx:id="btnU" text="U" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
-            <Button fx:id="btnV" text="V" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
-            <Button fx:id="btnW" text="W" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
-            <Button fx:id="btnX" text="X" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
-            <Button fx:id="btnY" text="Y" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
-            <Button fx:id="btnZ" text="Z" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
+        <HBox>
+            <children>
+                <HBox fx:id="keyboardLine3">
+                    <Button fx:id="btnS" text="S" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnT" text="T" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnU" text="U" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnV" text="V" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnW" text="W" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnX" text="X" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnY" text="Y" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnZ" text="Z" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                </HBox>
+
+
+            </children>
+        </HBox>
+        <HBox>
+            <children>
+                <HBox fx:id="keyboardLine3k">
+                    <Button fx:id="btnSk" text="s" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnTk" text="t" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnUk" text="u" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnVk" text="v" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnWk" text="w" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnXk" text="x" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnYk" text="y" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                    <Button fx:id="btnZk" text="z" style="-fx-pref-height: 70px; -fx-pref-width: 70px; -fx-font-size: 25px"/>
+                </HBox>
+
+            </children>
         </HBox>
         <HBox fx:id="keyboardLine4">
-            <!--<Button fx:id="btnVor" text="-&gt;"      style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>-->
-            <Button fx:id="btnZuerueck" text="&lt;-" style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
-            <Button fx:id="btnLeer" text="&lt;&gt;"   style="-fx-pref-height: 35px; -fx-pref-width: 35px"/>
-        </HBox>
-        <HBox fx:id="keyboardLine5">
-            <Button fx:id="btnOK" text="OK"   style="-fx-pref-height: 45px; -fx-pref-width: 45px"/>
+            <Button fx:id="btnZuerueck" text="&lt;-"
+                    style="-fx-pref-height: 70px;-fx-pref-width: 70px;-fx-font-size: 25px"/>
+            <Button fx:id="btnLeer" text="&lt;&gt;"
+                    style="-fx-pref-height: 70px;-fx-pref-width: 70px;-fx-font-size: 25px"/>
+            <Button fx:id="btnOK" text="ok" style="-fx-pref-height: 70px; -fx-pref-width: 70px;-fx-font-size: 25px"/>
         </HBox>
         <HBox fx:id="resultLine1">
-            <Label fx:id="labelOK" text="" />
+            <Label fx:id="labelOKWrite" text="" style="-fx-font-size: 25px"/>
         </HBox>
         <HBox fx:id="resultLine2">
-            <Label fx:id="labelBad" text="" />
+            <Label fx:id="labelBadWrite" text="" style="-fx-font-size: 25px"/>
         </HBox>
+        <HBox fx:id="resultLine3">
+            <Label fx:id="labelOKCalc" text="" style="-fx-font-size: 25px"/>
+        </HBox>
+        <HBox fx:id="resultLine4">
+            <Label fx:id="labelBadCalc" text="" style="-fx-font-size: 25px"/>
+        </HBox>
+        <HBox>
+            <TextField fx:id="textFieldMatheA" text="" editable="false"
+                       style="-fx-pref-height: 70px; -fx-pref-width: 250px; -fx-font-size: 25px"/>
+            <Button fx:id="btnCalc" text="=" style="-fx-pref-height: 70px; -fx-pref-width: 70px;-fx-font-size: 25px"/>
+            <TextField fx:id="textFieldMatheB" text="" editable="true"
+                       style="-fx-pref-height: 70px; -fx-pref-width: 250px; -fx-font-size: 25px"/>
+        </HBox>
+        <!--</Tab>-->
+        <!--</TabPane>-->
+
 
     </VBox>
 </fx:root>
