@@ -152,39 +152,41 @@ public class MainPaneController implements Initializable {
     //rechenaufgaben
     btnCalcPlus.setOnAction(event -> {
       String result = textFieldMatheBPlus.getText().trim();
-      boolean smily = Integer.valueOf(result).equals(expectedResultPlus);
-      if (smily) {
-        counterSmilyCalc = counterSmilyCalc + 1;
-//        labelOKCalc.setText( ":-} " + counterSmilyCalc);
-        labelOKCalc.setText( labelOKCalc.getText() + ":-} ");
-      } else {
-        counterNotSmilyCalc = counterNotSmilyCalc + 1;
-//        labelBadCalc.setText(":-{ " + counterNotSmilyCalc);
-        labelBadCalc.setText(labelBadCalc.getText() + ":-{ ");
+      try {
+        boolean smily = Integer.valueOf(result).equals(expectedResultPlus);
+        checkResult(smily);
+        initNextRechenaufgabePlus();
+      } catch (NumberFormatException e) {
+        e.printStackTrace();
       }
-      initNextRechenaufgabePlus();
 
     });
 
     btnCalcMinus.setOnAction(event -> {
       String result = textFieldMatheBMinus.getText().trim();
-      boolean smily = Integer.valueOf(result).equals(expectedResultMinus);
-      if (smily) {
-        counterSmilyCalc = counterSmilyCalc + 1;
-//        labelOKCalc.setText( ":-} " + counterSmilyCalc);
-        labelOKCalc.setText( labelOKCalc.getText() + ":-} ");
-      } else {
-        counterNotSmilyCalc = counterNotSmilyCalc + 1;
-//        labelBadCalc.setText(":-{ " + counterNotSmilyCalc);
-        labelBadCalc.setText(labelBadCalc.getText() + ":-{ ");
+      try {
+        boolean smily = Integer.valueOf(result).equals(expectedResultMinus);
+        checkResult(smily);
+        initNextRechenaufgabeMinus();
+      } catch (NumberFormatException e) {
+        e.printStackTrace();
       }
-      initNextRechenaufgabeMinus();
 
     });
     initNextRechenaufgabePlus();
     initNextRechenaufgabeMinus();
 
 
+  }
+
+  private void checkResult(final boolean smily) {
+    if (smily) {
+      counterSmilyCalc = counterSmilyCalc + 1;
+      labelOKCalc.setText( labelOKCalc.getText() + ":-} ");
+    } else {
+      counterNotSmilyCalc = counterNotSmilyCalc + 1;
+      labelBadCalc.setText(labelBadCalc.getText() + ":-{ ");
+    }
   }
 
   private Random random = new Random();
