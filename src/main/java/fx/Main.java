@@ -11,7 +11,7 @@ public class Main extends Application {
   public void start(Stage primaryStage) throws Exception {
     MainPane root = new MainPane();
     primaryStage.setTitle("Hello World");
-    primaryStage.setScene(new Scene(root, 1280,800));
+    primaryStage.setScene(new Scene(root, 1024,500));
     primaryStage.show();
   }
 

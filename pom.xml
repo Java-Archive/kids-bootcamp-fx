@@ -20,6 +20,18 @@
     <!--</dependencyManagement>-->
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.rapidpm</groupId>
+            <artifactId>rapidpm-functional-reactive</artifactId>
+            <version>0.0.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
@@ -32,11 +44,11 @@
             <version>2.2</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.lmax</groupId>
-            <artifactId>disruptor</artifactId>
-            <version>3.3.0</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.lmax</groupId>-->
+            <!--<artifactId>disruptor</artifactId>-->
+            <!--<version>3.3.0</version>-->
+        <!--</dependency>-->
         <!--<dependency>-->
             <!--<groupId>org.loadui</groupId>-->
             <!--<artifactId>testFx</artifactId>-->
@@ -123,18 +135,18 @@
     </build>
 
     <!--for development of features/develop branch-->
-    <distributionManagement>
-        <repository>
-            <id>releases</id>
-            <name>RapidPM Releases</name>
-            <url>http://${nexus.ip}/nexus/content/repositories/releases</url>
-        </repository>
-        <snapshotRepository>
-            <id>snapshots</id>
-            <name>RapidPM Snapshots</name>
-            <url>http://${nexus.ip}/nexus/content/repositories/snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
+    <!--<distributionManagement>-->
+        <!--<repository>-->
+            <!--<id>releases</id>-->
+            <!--<name>RapidPM Releases</name>-->
+            <!--<url>http://${nexus.ip}/nexus/content/repositories/releases</url>-->
+        <!--</repository>-->
+        <!--<snapshotRepository>-->
+            <!--<id>snapshots</id>-->
+            <!--<name>RapidPM Snapshots</name>-->
+            <!--<url>http://${nexus.ip}/nexus/content/repositories/snapshots</url>-->
+        <!--</snapshotRepository>-->
+    <!--</distributionManagement>-->
     <profiles>
         <profile>
             <id>junit</id>
@@ -173,137 +185,6 @@
                     </plugin>
                 </plugins>
             </build>
-        </profile>
-        <profile>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <id>arquillian_weld-ee-embedded-11</id>
-            <dependencies>
-                <dependency>
-                    <groupId>org.jboss.arquillian.container</groupId>
-                    <artifactId>arquillian-weld-ee-embedded-1.1</artifactId>
-                    <version>1.0.0.CR7</version>
-                </dependency>
-                <dependency>
-                    <groupId>org.jboss.weld</groupId>
-                    <artifactId>weld-core</artifactId>
-                </dependency>
-                <dependency>
-                    <groupId>org.jboss.weld</groupId>
-                    <artifactId>weld-api</artifactId>
-                </dependency>
-                <dependency>
-                    <groupId>org.jboss.ejb3</groupId>
-                    <artifactId>jboss-ejb3-api</artifactId>
-                    <scope>test</scope>
-                </dependency>
-                <dependency>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-simple</artifactId>
-                </dependency>
-                <!--Arquillian-->
-                <dependency>
-                    <groupId>org.jboss.shrinkwrap.resolver</groupId>
-                    <artifactId>shrinkwrap-resolver-depchain</artifactId>
-                    <type>pom</type>
-                    <scope>test</scope>
-                </dependency>
-                <dependency>
-                    <groupId>org.jboss.arquillian.junit</groupId>
-                    <artifactId>arquillian-junit-container</artifactId>
-                    <scope>test</scope>
-                </dependency>
-                <dependency>
-                    <groupId>org.jboss.shrinkwrap</groupId>
-                    <artifactId>shrinkwrap-api</artifactId>
-                    <scope>test</scope>
-                </dependency>
-                <dependency>
-                    <groupId>org.jboss.shrinkwrap</groupId>
-                    <artifactId>shrinkwrap-impl-base</artifactId>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
-            <dependencyManagement>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.jboss.weld</groupId>
-                        <artifactId>weld-core-bom</artifactId>
-                        <version>2.1.0.Final</version>
-                        <type>pom</type>
-                        <scope>import</scope>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.jboss.ejb3</groupId>
-                        <artifactId>jboss-ejb3-api</artifactId>
-                        <version>3.1.0</version>
-                        <scope>test</scope>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.jboss.shrinkwrap.resolver</groupId>
-                        <artifactId>shrinkwrap-resolver-bom</artifactId>
-                        <version>2.1.0-alpha-1</version>
-                        <type>pom</type>
-                        <scope>test</scope>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.jboss.shrinkwrap</groupId>
-                        <artifactId>shrinkwrap-depchain</artifactId>
-                        <version>1.2.0</version>
-                        <type>pom</type>
-                        <scope>test</scope>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.jboss.arquillian</groupId>
-                        <artifactId>arquillian-bom</artifactId>
-                        <version>1.1.2.Final</version>
-                        <scope>import</scope>
-                        <type>pom</type>
-                    </dependency>
-
-                    <dependency>
-                        <groupId>org.jboss.shrinkwrap.descriptors</groupId>
-                        <artifactId>shrinkwrap-descriptors-bom</artifactId>
-                        <version>2.0.0-alpha-5</version>
-                        <scope>test</scope>
-                        <type>pom</type>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.jboss.shrinkwrap.resolver</groupId>
-                        <artifactId>shrinkwrap-resolver-depchain</artifactId>
-                        <version>2.0.1</version>
-                        <type>pom</type>
-                        <scope>test</scope>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.jboss.arquillian.junit</groupId>
-                        <artifactId>arquillian-junit-container</artifactId>
-                        <version>1.1.2.Final</version>
-                        <scope>test</scope>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.jboss.shrinkwrap</groupId>
-                        <artifactId>shrinkwrap-api</artifactId>
-                        <version>1.2.0</version>
-                        <scope>test</scope>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.jboss.shrinkwrap.resolver</groupId>
-                        <artifactId>shrinkwrap-resolver-api-maven</artifactId>
-                        <version>2.0.1</version>
-                        <scope>test</scope>
-                    </dependency>
-
-                    <dependency>
-                        <groupId>org.jboss.shrinkwrap</groupId>
-                        <artifactId>shrinkwrap-impl-base</artifactId>
-                        <version>1.2.0</version>
-                        <scope>test</scope>
-                    </dependency>
-
-                </dependencies>
-            </dependencyManagement>
         </profile>
     </profiles>
 
