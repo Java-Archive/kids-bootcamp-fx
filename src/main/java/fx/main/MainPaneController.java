@@ -1,10 +1,11 @@
 package fx.main;
 
+import static java.util.Arrays.asList;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
@@ -26,16 +27,20 @@ public class MainPaneController implements Initializable {
 
   public TextField textFieldA;
   public TextField textFieldB;
+
   public Button btnA, btnB, btnC, btnD, btnE, btnF, btnG, btnH;
   public Button btnI, btnJ, btnK, btnL, btnM, btnN, btnO, btnP;
   public Button btnQ, btnR, btnS, btnT, btnU, btnV, btnW, btnX;
   public Button btnY, btnZ;
+
+  public Button btnAE, btnOE, btnUE;
 
   public Button btnAk, btnBk, btnCk, btnDk, btnEk, btnFk, btnGk, btnHk;
   public Button btnIk, btnJk, btnKk, btnLk, btnMk, btnNk, btnOk, btnPk;
   public Button btnQk, btnRk, btnSk, btnTk, btnUk, btnVk, btnWk, btnXk;
   public Button btnYk, btnZk;
 
+  public Button btnAe, btnOe, btnUe, btnSz;
 
   private List<Button> buttonList;
   private List<Button> buttonListK;
@@ -75,20 +80,22 @@ public class MainPaneController implements Initializable {
         .lines()
         .collect(Collectors.toList()))
         .get()
-        .bind(
-            success -> words.addAll(success),
-            System.out::println);
+        .ifPresentOrElse(
+            s -> words.addAll(s) ,
+            System.out::print
+        );
+
   }
 
 
   @Override
-  public void initialize(URL location, ResourceBundle resources) {
+  public void initialize(URL location , ResourceBundle resources) {
     Collections.shuffle(words);
     textFieldA.setText(words.get(0));
 
     btnZuerueck.setOnAction(event -> {
       String text = textFieldB.getText();
-      if (! text.isEmpty()) textFieldB.setText(text.substring(0, text.length() - 1));
+      if (! text.isEmpty()) textFieldB.setText(text.substring(0 , text.length() - 1));
     });
     btnLeer.setOnAction(event -> textFieldB.setText(""));
 
@@ -110,16 +117,20 @@ public class MainPaneController implements Initializable {
       textFieldA.setText(words.get(0));
     });
 
-    buttonList = Arrays.asList(btnA, btnB, btnC, btnD, btnE, btnF, btnG, btnH,
-        btnI, btnJ, btnK, btnL, btnM, btnN, btnO, btnP, btnQ, btnR, btnS, btnT,
-        btnU, btnV, btnW, btnX, btnY, btnZ);
+    buttonList = asList(btnA , btnB , btnC , btnD , btnE , btnF , btnG , btnH ,
+                        btnI , btnJ , btnK , btnL , btnM , btnN , btnO , btnP , btnQ , btnR , btnS , btnT ,
+                        btnU , btnV , btnW , btnX , btnY , btnZ ,
+                        btnAE , btnOE , btnUE
+    );
 
-    buttonListK = Arrays.asList(btnAk, btnBk, btnCk, btnDk, btnEk, btnFk, btnGk, btnHk,
-        btnIk, btnJk, btnKk, btnLk, btnMk, btnNk, btnOk, btnPk, btnQk, btnRk, btnSk,
-        btnTk, btnUk, btnVk, btnWk, btnXk, btnYk, btnZk);
+    buttonListK = asList(btnAk , btnBk , btnCk , btnDk , btnEk , btnFk , btnGk , btnHk ,
+                         btnIk , btnJk , btnKk , btnLk , btnMk , btnNk , btnOk , btnPk , btnQk , btnRk , btnSk ,
+                         btnTk , btnUk , btnVk , btnWk , btnXk , btnYk , btnZk ,
+                         btnAe , btnOe , btnUe , btnSz
+    );
 
-    buttonList.forEach(b -> addButtonEventHandler(b, textFieldB));
-    buttonListK.forEach(b -> addButtonEventHandler(b, textFieldB));
+    buttonList.forEach(b -> addButtonEventHandler(b , textFieldB));
+    buttonListK.forEach(b -> addButtonEventHandler(b , textFieldB));
 
     //rechenaufgaben
     btnCalcPlus.setOnAction(event -> {
@@ -164,7 +175,7 @@ public class MainPaneController implements Initializable {
   private Random random = new Random();
 
   private void initNextRechenaufgabePlus() {
-    int[] ints = random.ints(0, 15).limit(2).toArray();
+    int[] ints = random.ints(0 , 15).limit(2).toArray();
     expectedResultPlus = ints[0] + ints[1];
     textFieldMatheAPlus.setText(ints[0] + " + " + ints[1]);
     textFieldMatheBPlus.setText("");
@@ -172,8 +183,8 @@ public class MainPaneController implements Initializable {
 
   private void initNextRechenaufgabeMinus() {
     int[] ints = new int[2];
-    ints[0] = random.ints(1, 25).limit(1).toArray()[0];
-    ints[1] = random.ints(0, ints[0]).limit(1).toArray()[0];
+    ints[0] = random.ints(1 , 25).limit(1).toArray()[0];
+    ints[1] = random.ints(0 , ints[0]).limit(1).toArray()[0];
     expectedResultMinus = ints[0] - ints[1];
     textFieldMatheAMinus.setText(ints[0] + " - " + ints[1]);
     textFieldMatheBMinus.setText("");
@@ -182,8 +193,8 @@ public class MainPaneController implements Initializable {
   private int expectedResultPlus = 0;
   private int expectedResultMinus = 0;
 
-  private void addButtonEventHandler(Button btn, TextField tf) {
-    btn.setOnAction(new ButtonEventHandler(btn, tf));
+  private void addButtonEventHandler(Button btn , TextField tf) {
+    btn.setOnAction(new ButtonEventHandler(btn , tf));
   }
 
   private static class ButtonEventHandler implements EventHandler<ActionEvent> {
@@ -191,7 +202,7 @@ public class MainPaneController implements Initializable {
     private Button btn;
     private TextField tf;
 
-    public ButtonEventHandler(Button btn, TextField tf) {
+    public ButtonEventHandler(Button btn , TextField tf) {
       this.btn = btn;
       this.tf = tf;
     }

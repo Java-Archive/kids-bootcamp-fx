@@ -11,9 +11,9 @@
         <!--<Tab fx:id="tabGrossbuchstaben">-->
         <HBox fx:id="topLine">
             <TextField fx:id="textFieldA"  editable="false"
-                       style="-fx-pref-height: 50px; -fx-pref-width: 250px; -fx-font-size: 20px"/>
+                       style="-fx-pref-height: 150px; -fx-pref-width: 250px; -fx-font-size: 20px"/>
             <TextField fx:id="textFieldB" text="" editable="false"
-                       style="-fx-pref-height: 50px; -fx-pref-width: 250px; -fx-font-size: 20px"/>
+                       style="-fx-pref-height: 150px; -fx-pref-width: 250px; -fx-font-size: 20px"/>
         </HBox>
 
         <HBox>
@@ -102,6 +102,29 @@
 
             </children>
         </HBox>
+
+        <HBox>
+            <children>
+                <HBox fx:id="keyboardLine3a">
+                    <Button fx:id="btnAE" text="Ä" style="-fx-pref-height: 50px; -fx-pref-width: 50px; -fx-font-size: 20px"/>
+                    <Button fx:id="btnOE" text="Ö" style="-fx-pref-height: 50px; -fx-pref-width: 50px; -fx-font-size: 20px"/>
+                    <Button fx:id="btnUE" text="Ü" style="-fx-pref-height: 50px; -fx-pref-width: 50px; -fx-font-size: 20px"/>
+                </HBox>
+            </children>
+        </HBox>
+        <HBox>
+            <children>
+                <HBox fx:id="keyboardLine3ak">
+                    <Button fx:id="btnAe" text="ä" style="-fx-pref-height: 50px; -fx-pref-width: 50px; -fx-font-size: 20px"/>
+                    <Button fx:id="btnOe" text="ö" style="-fx-pref-height: 50px; -fx-pref-width: 50px; -fx-font-size: 20px"/>
+                    <Button fx:id="btnUe" text="ü" style="-fx-pref-height: 50px; -fx-pref-width: 50px; -fx-font-size: 20px"/>
+                    <Button fx:id="btnSz" text="ß" style="-fx-pref-height: 50px; -fx-pref-width: 50px; -fx-font-size: 20px"/>
+                </HBox>
+            </children>
+        </HBox>
+
+
+
         <HBox fx:id="keyboardLine4">
             <Button fx:id="btnZuerueck" text="&lt;-"
                     style="-fx-pref-height: 50px;-fx-pref-width: 60px;-fx-font-size: 20px"/>
